@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>なすびさんのレシピ帳</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- ▼ファビコン追加▼ -->
+  <link rel="icon" href="cooking_icon.png" type="image/png">
+  <!-- ▼スマホ対応ビューポート▼ -->
+　<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+  <h1>なすびさんのレシピ帳</h1>
+
+  <!-- ハンバーガーメニューのボタン -->
+  <button id="menuButton">☰</button>
+
+  <!-- サイドメニュー -->
+  <div id="sideMenu">
+    <input type="text" id="search" placeholder="レシピ名を検索...">
+    <ul>
+      <li><a href="#chineseSalad">中華サラダのタレ</a></li>
+      <li><a href="#sweetSourSauce">チキン南蛮の甘酢だれ</a></li>
+      <li><a href="#hamburger">煮込みハンバーグのトマトソース</a></li>
+    </ul>
+  </div>
+
+  <!-- レシピ一覧 -->
+  <div id="recipes">
+    <details id="chineseSalad">
+      <summary>中華サラダのタレ</summary>
+      <p>材料や作り方…</p>
+    </details>
+    <details id="sweetSourSauce">
+      <summary>チキン南蛮の甘酢だれ</summary>
+      <p>材料や作り方…</p>
+    </details>
+    <details id="hamburger">
+      <summary>煮込みハンバーグのトマトソース</summary>
+      <p>材料や作り方…</p>
+    </details>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

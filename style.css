@@ -1,0 +1,100 @@
+/* ▼スマホ対応▼ */
+@media (max-width: 600px) {
+  #sideMenu.open {
+    width: 90vw;       /* 横幅を画面幅に合わせる */
+    height: 100vh;     /* 高さは全画面 */
+    padding: 1em;
+  }
+
+  #sideMenu {
+    width: 50px;
+    height: 50px;
+  }
+
+  #search {
+    width: 100%;
+  }
+
+  details {
+    width: 100%;       /* カード幅も画面幅に合わせる */
+  }
+}
+/* ▲スマホ対応▲ */
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 2em;
+  background: #fdfcf9;
+}
+h1 {
+  color: #444;
+  border-bottom: 2px solid #ddd;
+}
+
+/* ハンバーガーメニュー */
+#menuButton {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* メニュー本体 */
+#sideMenu {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+  z-index: 1000;
+  padding: 1em;
+}
+#sideMenu.open {
+  transform: scale(1);
+  width: 250px;
+  height: 100vh;
+}
+#search {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#sideMenu ul {
+  list-style: none;
+  padding: 0;
+}
+#sideMenu li {
+  margin: 0.5em 0;
+}
+#sideMenu a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+/* レシピカード */
+details {
+  margin: 1em 0;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
