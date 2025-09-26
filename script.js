@@ -26,3 +26,21 @@ searchBox.addEventListener("keydown", (e) => {
     }
   }
 });
+
+// ▼メニューリンクでスムーズスクロール▼
+const menuLinks = document.querySelectorAll("#sideMenu a");
+
+menuLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // デフォルトのジャンプを止める
+    const targetId = link.getAttribute("href").substring(1);
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      sideMenu.classList.remove("open"); // メニューを閉じる
+      targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      targetEl.open = true; // details を自動展開
+    }
+  });
+});
+// ▲メニューリンクでスムーズスクロール▲
+

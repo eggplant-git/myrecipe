@@ -93,8 +93,127 @@ details {
   border: 1px solid #ccc;
   border-radius: 8px;
   background: #fff;
+
+  max-width: 30%;      /* 最大幅を画面の半分に */
+  min-width: 300px;    /* 小さすぎないように最低幅を設定 */
+
+  background-color: #fff8e1; /* 薄い黄色に */
+  border-color: #ffd700;     /* 黄金色の枠 */
 }
+
 summary {
   cursor: pointer;
   font-weight: bold;
+}
+
+/* ▼材料の左右揃え▼ */
+.ingredients {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredients li {
+  display: flex;
+  justify-content: space-between; /* 左右に分ける */
+  padding: 2px 0;
+  border-bottom: 1px dashed #eee; /* 好みで区切り線 */
+}
+
+.ingredients .name {
+  text-align: left;
+}
+
+.ingredients .amount {
+  text-align: right;
+}
+
+/* ▼スマホ対応：画面幅600px以下でフル幅に▼ */
+@media (max-width: 600px) {
+  details {
+    max-width: 100%;
+    min-width: auto;
+  }
+}
+
+/* ▼レシピ追加フォーム全体（detailsの内側）▼ */
+#addRecipeTool details {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 1.5em;
+  background: #fdf6e3; /* 優しいベージュ系 */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Helvetica', sans-serif;
+}
+
+/* ▼summary（折りたたみタイトル）▼ */
+#addRecipeTool summary {
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  color: #f08a24;
+  outline: none;
+  padding: 0.3em 0.5em;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+#addRecipeTool summary:hover {
+  background-color: rgba(240,138,36,0.1);
+}
+
+/* ▼入力欄▼ */
+#addRecipeTool input[type="text"],
+#addRecipeTool textarea {
+  width: 100%;
+  padding: 0.6em 0.8em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#addRecipeTool input[type="text"]:focus,
+#addRecipeTool textarea:focus {
+  border-color: #f08a24;
+  box-shadow: 0 0 5px rgba(240,138,36,0.5);
+  outline: none;
+}
+
+/* ▼ボタン▼ */
+#addRecipeTool button {
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1.1em;
+  background-color: #f08a24;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#addRecipeTool button:hover {
+  background-color: #d97706;
+}
+
+/* ▼textareaの縦方向リサイズのみ可能にする▼ */
+#addRecipeTool textarea {
+  resize: vertical;
+}
+
+/* ▼スマホ対応：画面幅600px以下で横幅フルにする▼ */
+@media (max-width: 600px) {
+  #addRecipeTool details {
+    max-width: 100%;
+    margin: 1em auto;
+    padding: 1em;
+  }
+
+  #addRecipeTool summary {
+    font-size: 1.1em;
+  }
 }
